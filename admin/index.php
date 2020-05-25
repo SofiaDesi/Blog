@@ -10,7 +10,9 @@
     case 'user':
       include('pages/user.php');
       break;
-    
+    case 'cadUser':
+      include('pages/cadUser.php');
+      break; 
     default:
       include('pages/home.php');
       break;
