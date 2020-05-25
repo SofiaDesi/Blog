@@ -13,6 +13,9 @@
     case 'cadUser':
       include('pages/cadUser.php');
       break; 
+    case 'AtUser':
+      include('pages/AtUser.php');
+      break; 
     default:
       include('pages/home.php');
       break;

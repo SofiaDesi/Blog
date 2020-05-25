@@ -7,7 +7,7 @@
 
     $query = $pdo->prepare("SELECT * FROM usuario WHERE email = :email");
     $query->bindValue(':email', $email);
-
+    
     $query->execute();
     
     if ($query->rowCount() === 0) {
@@ -23,7 +23,7 @@
         $exec->bindValue(":data", $data);
 
         $exec->execute();
-        header('location: http://localhost/blog-sofia/admin/index.php/?page=cadUser/?page=user');
+        header('location: http://localhost/blog-sofia/admin/index.php?page=user');
     }else {
         echo "Email já existe.";
     }

@@ -33,14 +33,15 @@
                     $dados = $consulta->fetchAll(PDO::FETCH_OBJ);
 
                     foreach($dados as $dado) {
+                      $date = date_create($dado -> data);
 
                   ?>
                     <tr>
                       <td><?= $dado->id ?></td>
                       <td><?= $dado->nome?></td>
                       <td><?= $dado->email?></td>
-                      <td><?= $dado->data?></td>
-                      <td><a class="btn btn-secondary" href="#">DELETAR</a>  <a class="btn btn-info" href="#">ATUALIZAR</a> </td>
+                      <td><?= date_format($date, 'd/m/Y')?></td>
+                      <td><a class="btn btn-secondary" href="functions/delUser.php?id=<?= $dado->id ?>">DELETAR</a>  <a class="btn btn-info" href="?page=AtUser&id=<?= $dado->id ?>">ATUALIZAR</a> </td>
                     </tr>
                     <?php } ?>
                   </tbody>
